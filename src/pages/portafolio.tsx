@@ -8,71 +8,86 @@ import {
   Title,
 } from "@mantine/core";
 import "./portafolio.css";
-import Demo from "../components/Marquee.tsx";
-import OmarPerfil from "../assets/Logos/Perfil.png";
-import Projects from "../components/Projects.tsx";
-import Head from "../components/head.tsx";
+import Tecnologias from "../components/About/TecnologiasMarquee";
+import Projects from "../components/Proyectos/Projects";
+import Head from "../components/header/head";
+import LiquidEther from "../components/reactbits/Dither/LiquidEther";
+import SobreMi from "../components/About/SobreMi";
+import Perfil from "../components/About/Perfil";
+import Contact from "../components/Contact/Contact";
+import Stack from "../components/Stack/Stack";
+import Educacion from "../components/Education/Educacion";
+import DotGrid from "../components/reactbits/DotGrid/DotGrid";
+
 export default function Portafolio() {
   return (
     <Container size="lg" p="md">
-      <Grid grow p="md" justify="center" align="center">
-        {/* Encabezado */}
-        <Head />
-        {/* Tecnologías */}
-        <Grid.Col span={{ base: 12, md: 4 }}>
-          <Box h="100%" p="md" ta="center">
-            <Title order={3} mb="md">
-              Tecnologías
-            </Title>
-            <Demo />
-          </Box>
-        </Grid.Col>
+      <Box
+        style={{
+          overflow: "hidden",
+        }}
+      >
+        {/* Fondo animado */}
+        <Box
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <DotGrid
+            dotSize={5}
+            gap={15}
+            baseColor="#2F293A"
+            activeColor="#e61337"
+            proximity={120}
+            shockRadius={250}
+            shockStrength={5}
+            resistance={750}
+            returnDuration={1.5}
+          />
+        </Box>
 
-        {/* Perfil */}
-        <Grid.Col span={{ base: 12, md: 4 }}>
-          <Box ta="center" p="md">
-            <AspectRatio ratio={1} maw={200} mx="auto">
-              <Image
-                src={OmarPerfil}
-                alt="Omar Anthony Gutierrez"
-                radius="xl"
-              />
-            </AspectRatio>
+        {/* Contenido */}
+        <Grid
+          grow
+          p="md"
+          justify="center"
+          align="center"
+          style={{
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          <Head />
+          <Grid.Col span={{ base: 12, md: 4 }}>
+            <Tecnologias />
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, md: 4 }}>
+            <Perfil />
+          </Grid.Col>
 
-            <Title order={4} mt="md">
-              Omar Anthony
-            </Title>
+          {/* Sobre mí */}
 
-            <Text size="lg" fw={500} c="blue">
-              Full Stack Developer
-            </Text>
+          <Grid.Col span={{ base: 12, md: 4 }}>
+            <SobreMi />
+          </Grid.Col>
 
-            <Text size="sm" c="dimmed" mt="xs">
-              Java • Spring Boot • React • MySQL
-            </Text>
-          </Box>
-        </Grid.Col>
+          {/* Proyectos */}
 
-        {/* Sobre mí */}
-        <Grid.Col span={{ base: 12, md: 4 }}>
-          <Box p="md">
-            <Title order={3} mb="md">
-              Sobre mí
-            </Title>
-
-            <Text size="md" c="dimmed" lh={1.8}>
-              Soy desarrollador enfocado principalmente en Backend con Java y
-              Spring Boot. Me apasiona crear aplicaciones escalables, aprender
-              nuevas tecnologías y mejorar constantemente mis habilidades.
-              También cuento con experiencia en React para el desarrollo de
-              interfaces modernas y dinámicas.
-            </Text>
-          </Box>
-        </Grid.Col>
-        <Grid.Col span={{ base: 12, md: 2 }}>
-          <Projects />
-        </Grid.Col>
-      </Grid>
+          <Grid.Col span={{ base: 12, md: 12 }}>
+            <Projects />
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, md: 7 }}>
+            <Stack />
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, md: 5 }}>
+            <Educacion />
+          </Grid.Col>
+        </Grid>
+      </Box>
     </Container>
   );
 }

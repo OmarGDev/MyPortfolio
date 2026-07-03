@@ -1,15 +1,7 @@
-import {
-  Card,
-  Image,
-  Text,
-  Badge,
-  Button,
-  Group,
-  Typography,
-} from "@mantine/core";
-import misHabitos from "../assets/ProyectImg/mis-habitos.png";
-import mercadoMayorista from "../assets/ProyectImg/mercado-mayorista.png";
-
+import { Card, Image, Text, Badge, Button, Group, Title } from "@mantine/core";
+import misHabitos from "../../assets/ProyectImg/mis-habitos.png";
+import mercadoMayorista from "../../assets/ProyectImg/mercado-mayorista.png";
+import { IconBooks } from "@tabler/icons-react";
 const projects = [
   {
     title: "Mercado Mayorista",
@@ -28,9 +20,10 @@ const projects = [
 export default function Projects() {
   return (
     <section className="section-container section-block" id="proyectos">
-      <Typography>
-        <h1>Proyectos Destacados</h1>
-      </Typography>
+      <Title order={2} mb="md">
+        <IconBooks size={24} style={{ marginRight: 8 }} />
+        Proyectos
+      </Title>
       <div className="projects-grid" color="blue">
         {projects.map((project) => (
           <Card
