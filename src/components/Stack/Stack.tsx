@@ -27,7 +27,6 @@ export default function StackTecnologias() {
         <ThemeIcon size={42} radius="xl" color="blue">
           <IconStack2 size={24} />
         </ThemeIcon>
-
         <Title order={2}>Stack</Title>
       </Group>
 

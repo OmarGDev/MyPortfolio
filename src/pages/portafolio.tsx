@@ -11,17 +11,23 @@ import "./portafolio.css";
 import Tecnologias from "../components/About/TecnologiasMarquee";
 import Projects from "../components/Proyectos/Projects";
 import Head from "../components/header/head";
-import LiquidEther from "../components/reactbits/Dither/LiquidEther";
 import SobreMi from "../components/About/SobreMi";
 import Perfil from "../components/About/Perfil";
-import Contact from "../components/Contact/Contact";
 import Stack from "../components/Stack/Stack";
 import Educacion from "../components/Education/Educacion";
 import DotGrid from "../components/reactbits/DotGrid/DotGrid";
+import Waves from "../components/reactbits/Waves/Waves";
 
 export default function Portafolio() {
   return (
-    <Container size="lg" p="md">
+    <Container
+      size="lg"
+      p="md"
+      style={{
+        position: "relative",
+        zIndex: 1,
+      }}
+    >
       <Box
         style={{
           overflow: "hidden",
@@ -30,23 +36,25 @@ export default function Portafolio() {
         {/* Fondo animado */}
         <Box
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
+            position: "fixed",
+            inset: 0,
+            width: "100vw",
+            height: "100vh",
+            zIndex: -1,
           }}
         >
-          <DotGrid
-            dotSize={5}
-            gap={15}
-            baseColor="#2F293A"
-            activeColor="#e61337"
-            proximity={120}
-            shockRadius={250}
-            shockStrength={5}
-            resistance={750}
-            returnDuration={1.5}
+          <Waves
+            lineColor="#4e4242"
+            backgroundColor="rgba(0, 0, 0, 0.2)"
+            waveSpeedX={0.0125}
+            waveSpeedY={0.01}
+            waveAmpX={40}
+            waveAmpY={20}
+            friction={0.9}
+            tension={0.01}
+            maxCursorMove={120}
+            xGap={12}
+            yGap={36}
           />
         </Box>
 

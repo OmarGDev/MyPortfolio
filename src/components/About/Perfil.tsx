@@ -1,26 +1,23 @@
-import { AspectRatio, Box, Image, Paper, Text, Title } from "@mantine/core";
-import OmarPerfil from "../../assets/Logos/Perfil.png";
+import OmarPerfil2 from "../../assets/Logos/Perfil2.png";
+import ProfileCard from "../reactbits/ProfileCard/ProfileCard";
 
 export default function Perfil() {
   return (
-    <Paper withBorder radius="xl" shadow="md" p="xl">
-      <Box ta="center" p="md">
-        <AspectRatio ratio={1} maw={200} mx="auto">
-          <Image src={OmarPerfil} alt="Omar Anthony Gutierrez" radius="xl" />
-        </AspectRatio>
-
-        <Title order={4} mt="md">
-          Omar Anthony
-        </Title>
-
-        <Text size="lg" fw={500} c="blue">
-          Full Stack Developer
-        </Text>
-
-        <Text size="sm" c="dimmed" mt="xs">
-          Java • Spring Boot • React • MySQL
-        </Text>
-      </Box>
-    </Paper>
+    <ProfileCard
+      name="Omar G. Panebra"
+      title="Backend Developer"
+      handle="omargup"
+      status="Online"
+      contactText="Contactame"
+      avatarUrl={OmarPerfil2}
+      showUserInfo={false}
+      enableTilt={true}
+      enableMobileTilt
+      onContactClick={() => console.log("Contact clicked")}
+      iconUrl="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+      behindGlowColor="rgba(19, 21, 22, 0.67)"
+      behindGlowEnabled
+      innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
+    />
   );
 }
